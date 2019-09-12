@@ -31,7 +31,7 @@ export const reducer = (state = initialState, action) => {
         case REMOVE_ITEM: 
             let removedFeatures = state.car.features;
             removedFeatures.splice(
-                removedFeatures.findIndex(item => item.id == action.payload.id),
+                removedFeatures.findIndex(item => item.id === action.payload.id),
                 1
             );
             return {
