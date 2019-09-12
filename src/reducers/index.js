@@ -1,4 +1,5 @@
 import { ADD_ITEM } from '../actions';
+import { REMOVE_ITEM } from '../actions';
 
 const initialState = {
     additionalPrice: 0,
@@ -26,6 +27,16 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 car: { ...state.car, features },
+            }
+        case REMOVE_ITEM: 
+            let removedFeatures = state.car.features;
+            removedFeatures.splice(
+                removedFeatures.findIndex(item => item.id == action.payload.id),
+                1
+            );
+            return {
+                ...state,
+                car: { ...state.car, removedFeatures },
             }
         default: 
             return state;
