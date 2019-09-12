@@ -8,6 +8,7 @@ import { reducer } from './reducers';
 import 'bulma/css/bulma.css';
 import './styles.scss';
 
+// store holds state
 const store = createStore(reducer);
 
 const rootElement = document.getElementById('root');
